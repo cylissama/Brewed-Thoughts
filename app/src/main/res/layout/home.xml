@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/dark_coffee">
+
+    <TextView
+        android:id="@+id/helloUserText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="cursive"
+        android:text="@string/app_title"
+        android:textColor="@color/button_white"
+        android:textSize="60sp"
+        android:layout_margin="10sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/coffeeLogoView"
+        android:paddingBottom="70sp"
+        android:paddingTop="20sp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/coffee_shop_logo_design_png"
+        android:contentDescription="@string/coffee_logo" />
+
+    <Button
+        android:id="@+id/brewButton"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/custom_button"
+        android:layout_margin="5dp"
+        android:text="@string/brew_button_text" />
+
+    <Button
+        android:id="@+id/journalButton"
+        android:layout_gravity="center"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:layout_margin="5dp"
+        android:text="@string/journal_button_text" />
+
+    <Button
+        android:id="@+id/tipsButton"
+        android:layout_gravity="center"
+        android:layout_width="120sp"
+        android:background="@drawable/custom_button"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/tips_button_text" />
+</LinearLayout>

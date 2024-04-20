@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">CoffeeAppCS372Final</string>
+
+    // the Home Activity Screen
+    <string name="home_view_banner_text">Home</string>
+    <string name="journal_button_text">Journal</string>
+    <string name="brew_button_text">Brew</string>
+    <string name="tips_button_text">Tips</string>
+
+    <string name="welcome_user_text">Welcome User!</string>
+
+    // the Brew Activity Screen
+    <string name="app_title">Brewed Thoughs</string>
+
+    <string name="brew_banner_text">Brew</string>
+    <string name="beans_prompt_text">Beans</string>
+    <string name="brewer_prompt_text">Brewer</string>
+    <string name="method_prompt_text">Method (Optional)</string>
+    <string name="grams_prompt_text">Coffee in grams</string>
+    <string name="ml_prompt_text">Water in ml</string>
+    <string name="water_temp_prompt_text">Water Temp</string>
+    <string name="brew_save_button_text">Save</string>
+    <string name="coffee_logo">Coffee Logo</string>
+    <string name="back">Back</string>
+    <string name="view_past_brews">View Past Brews</string>
+    <string name="brew">Brew</string>
+
+    <string-array name="brewers">
+        <item>AeroPress</item>
+        <item>Chemex</item>
+        <item>Drip</item>
+        <item>French Press</item>
+        <item>Mocha Pot</item>
+        <item>V60</item>
+        <item>Phin</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="aeropress">Aeropress</string>
+    <string name="brewers">Brewers</string>
+
+
+
+    <!-- James Hoffman V60 Method -->
+    <string name="james_hoffman_v60_description">James Hoffman\'s V60 coffee brewing technique includes specific water temperature and coffee-to-water ratios to enhance flavor extraction. The method involves steps like rinsing the paper filter, making a well in the coffee bed, blooming, swirling, and multiple pouring stages to achieve a balanced extraction.</string>
+    <string-array name="james_hoffman_v60_steps">
+        <item>Rinse paper in V60 and pre-heat it.</item>
+        <item>Pour in coffee, make a well with your finger in the coffee bed.</item>
+        <item>Start timer and gently pour 2x coffee dose as water to bloom (up to 3x if necessary).</item>
+        <item>SWIRL IT GOOD.</item>
+        <item>Wait 30 to 45 seconds.</item>
+        <item>Spiral pour in 60% of total brew water in until 1:15.</item>
+        <item>Keep it topped up, slowly pouring the rest of the brew water over 30 seconds.</item>
+        <item>Little stir in one direction, then a little stir in the opposite direction.</item>
+        <item>Once it has drained a bit, then SWIRL IT.</item>
+        <item>Wait for the coffee to fully drain. You want a flat bed of coffee and no big grinds on the side of the filter paper.</item>
+    </string-array>
+
+    <!-- Advanced 4:6 Method -->
+    <string name="advanced_46_method_description">The Advanced 4:6 Method, developed by Tetsu Kasuya, segments the pouring process into precise parts with control over each to manipulate the coffee\'s flavor profile, focusing on the balance and richness of the brew.</string>
+    <string-array name="advanced_46_method_steps">
+        <item>Place the coffee filter in the V60 and rinse it with hot water to remove any paper taste and to warm up the brewer. Discard the rinsing water.</item>
+        <item>Grind your coffee beans to a medium consistency, similar to sea salt. Add the coffee grounds to the filter and gently tap to level the surface.</item>
+        <item>Start your timer. Pour 60 ml of hot water evenly over the coffee grounds to evenly saturate them. Let it sit for 30–45 seconds.</item>
+        <item>Slowly pour another 90 ml of water, starting at the center and moving outward in a slow spiral. Aim to finish this pour by the 1:15 minute mark on your timer.</item>
+        <item>Pour the remaining 150 ml of water in two stages, allowing the water to drain somewhat between pours. Continue using a slow, spiral pouring technique.</item>
+        <item>Allow the water to completely pass through the coffee, which should happen by about 3:30 minutes.</item>
+        <item>Discard the used coffee grounds and filter. Pour the brewed coffee into a cup and enjoy.</item>
+    </string-array>
+
+    <string name="drip_coffee_maker_description">This is the most common type of coffee maker, often found in households and offices. It heats water and drips through a filter basket filled with ground coffee, collecting the brew in a carafe or pot below.</string>
+    <string name="french_press_description">The French Press brews coffee by steeping ground coffee in hot water and then separating the grounds from the liquid with a plunger. It allows more oils and fine particles to remain in the coffee, enhancing its flavor.</string>
+    <string name="espresso_machine_description">Espresso machines use high pressure to force hot water through very finely ground coffee, producing a concentrated and flavorful shot of coffee.</string>
+    <string name="single_serve_coffee_maker_description">These machines brew one cup of coffee at a time using pre-packaged coffee pods or capsules, offering speed and convenience.</string>
+    <string name="aeropress_description">The AeroPress uses air pressure to push hot water through coffee grounds, combining features of a French press and an espresso machine to produce smooth, rich coffee.</string>
+    <string name="pour_over_description">Pour over involves hot water being poured over coffee grounds in a filter, with the brew draining into a carafe or mug. It allows precise control over brewing variables and highlights nuanced flavors.</string>
+    <string name="moka_pot_description">Also known as a stovetop espresso maker, the Moka pot brews coffee by passing boiling water pressurized by steam through ground coffee, producing a strong, concentrated coffee.</string>
+    <string name="siphon_description">A siphon brewer uses a heat source to create vapor pressure in a lower chamber which forces water into an upper chamber where it mixes with coffee grounds. The brewed coffee then siphons back into the lower chamber, known for its theatrical brewing process and clean, crisp coffee.</string>
+
+</resources>
