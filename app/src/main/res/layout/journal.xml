@@ -7,17 +7,9 @@
     android:background="@color/dark_coffee"
     tools:context=".Journal">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/brewRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="567dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="86dp" />
-
     <TextView
         android:id="@+id/viewBrewTitle"
+        android:textColor="@color/button_white"
         android:textStyle="bold"
         android:textSize="30dp"
         android:layout_width="wrap_content"
@@ -26,6 +18,39 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
         android:text="@string/view_past_brews" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/brewRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="567dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="86dp"
+            android:layout_weight="1"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="567dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="86dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/button_white"
+                android:textSize="40sp"
+                android:text="Balls"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

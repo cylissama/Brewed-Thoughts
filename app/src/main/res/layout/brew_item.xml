@@ -15,21 +15,26 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/brewContainer"
-        android:layout_margin="10sp"
+        android:layout_margin="5sp"
         app:cardBackgroundColor="@color/light_brown"
         android:layout_gravity="center_horizontal"
         app:cardCornerRadius="20dp"
         app:cardElevation="5sp"
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
-        android:layout_width="300sp"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
         <TextView
             android:id="@+id/brewView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="10sp"
+            android:textColor="@color/black"
             android:text="placeholder" />
     </androidx.cardview.widget.CardView>
 </LinearLayout>

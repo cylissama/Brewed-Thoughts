@@ -9,6 +9,7 @@
     <TextView
         android:id="@+id/brewBanner"
         android:layout_gravity="center"
+        android:textColor="@color/button_white"
         android:textStyle="bold"
         android:textSize="40sp"
         android:layout_width="wrap_content"

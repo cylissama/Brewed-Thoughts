@@ -76,5 +76,7 @@
     <string name="pour_over_description">Pour over involves hot water being poured over coffee grounds in a filter, with the brew draining into a carafe or mug. It allows precise control over brewing variables and highlights nuanced flavors.</string>
     <string name="moka_pot_description">Also known as a stovetop espresso maker, the Moka pot brews coffee by passing boiling water pressurized by steam through ground coffee, producing a strong, concentrated coffee.</string>
     <string name="siphon_description">A siphon brewer uses a heat source to create vapor pressure in a lower chamber which forces water into an upper chamber where it mixes with coffee grounds. The brewed coffee then siphons back into the lower chamber, known for its theatrical brewing process and clean, crisp coffee.</string>
+    <string name="add_note">Add Note</string>
+    <string name="delete">Delete</string>
 
 </resources>
