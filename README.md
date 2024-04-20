@@ -1,2 +1,2 @@
-# AndroidApps372
- android app labs from class
+# Brewed Thoughts
+### Final Project for Mobile App Development (CS 372)
