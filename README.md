@@ -1,3 +1,2 @@
 # Brewed Thoughts
-
-## Final Project for Mobile App Development (CS 372)
+### Final Project for Mobile App Development (CS 372)
