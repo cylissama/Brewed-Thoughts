@@ -78,5 +78,13 @@
     <string name="siphon_description">A siphon brewer uses a heat source to create vapor pressure in a lower chamber which forces water into an upper chamber where it mixes with coffee grounds. The brewed coffee then siphons back into the lower chamber, known for its theatrical brewing process and clean, crisp coffee.</string>
     <string name="add_note">Add Note</string>
     <string name="delete">Delete</string>
+    <string name="method">Method</string>
+    <string name="grams">Grams</string>
+    <string name="note">Note</string>
+    <string name="light_roast">Generally preferred for milder coffee varieties. Light brown in color. No oil on the surface. Best way to brew: Drip or pour over. Slightly higher temp, and finer grind</string>
+    <string name="medium_roast">Medium brown in color stronger flavor, and non-oily surface. Brew with cold brew, pour over, chemex</string>
+    <string name="dark_roast">Shiny black, oily surface. More bitter than the others. Darker color. Little lower water temp. Sometimes grind size should be larger.</string>
+    <string name="HarioV60">Pour over involves pouring hot water over coffee grounds in a filter. The water drains through the coffee and filter into a carafe or mug. Devices like the V60 and Chemex are popular for this brewing method. It\'s favored for its ability to control every variable of the brewing process and highlight nuanced flavors.</string>
+    <string name="pour_over">Pour Over</string>
 
 </resources>

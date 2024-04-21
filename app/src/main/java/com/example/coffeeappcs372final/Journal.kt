@@ -1,13 +1,12 @@
 package com.example.coffeeappcs372final
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.coffeeappcs372final.databinding.JournalBinding
-import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -44,7 +43,7 @@ class Journal : AppCompatActivity() {
                 val allBrews = withContext(Dispatchers.IO) {
                     dataBaseHelper.allBrews // Perform DB operation on IO dispatcher
                 }
-                val adapter = BrewAdapter(this@Journal, allBrews)
+                val adapter = BrewAdapter(this@Journal, allBrews, dataBaseHelper)
                 brewRecyclerView.adapter = adapter
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {

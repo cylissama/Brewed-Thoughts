@@ -63,6 +63,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return insert != -1; // return true if insert is successful
     }
 
+    public boolean deleteBrew(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String whereClause = COLUMN_ID + "=?";
+        String[] whereArgs = new String[] { String.valueOf(id) };
+
+        int deleteCount = db.delete(BREW_TABLE, whereClause, whereArgs);
+        db.close();
+
+        return deleteCount > 0; // returns true if any rows were deleted
+    }
+
     public List<BrewModel> getAllBrews() {
         List<BrewModel> returnList = new ArrayList<>();
 
@@ -95,6 +106,4 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         return returnList;
     }
-
-
 }
