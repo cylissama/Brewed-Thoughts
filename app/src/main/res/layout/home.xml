@@ -22,11 +22,9 @@
     <ImageView
         android:id="@+id/coffeeLogoView"
         android:layout_width="433dp"
-        android:layout_height="350dp"
+        android:layout_height="300dp"
         android:layout_gravity="center"
         android:contentDescription="@string/coffee_logo"
-        android:paddingTop="20sp"
-        android:paddingBottom="70sp"
         app:srcCompat="@drawable/coffee_shop_logo_design_png" />
 
     <Button
@@ -48,6 +46,16 @@
         android:textColor="@color/dark_coffee"
         android:layout_margin="5dp"
         android:text="@string/journal_button_text" />
+
+    <Button
+        android:id="@+id/favsButton"
+        android:layout_gravity="center"
+        android:layout_width="150sp"
+        android:layout_height="70sp"
+        android:backgroundTint="@color/button_white"
+        android:textColor="@color/dark_coffee"
+        android:layout_marginTop="5sp"
+        android:text="@string/favorites" />
 
     <Button
         android:id="@+id/tipsButton"

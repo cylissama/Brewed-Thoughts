@@ -21,6 +21,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_TEMP = "TEMPER";
     public static final String COLUMN_METHOD = "METHOD";
     public static final String COLUMN_TIME = "TIME";
+    public static final String COLUMN_NOTE = "NOTE";
+    public static final String COLUMN_FAVORITE = "FAVORITE";
 
     public DataBaseHelper(@Nullable Context context) {
         super(context, "brewDB.db", null, 1);
@@ -36,7 +38,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 COLUMN_WATER + " FLOAT DEFAULT 0.0, " +
                 COLUMN_TEMP + " FLOAT DEFAULT 0.0, " +
                 COLUMN_METHOD + " TEXT DEFAULT 'N/A', " +
-                COLUMN_TIME + " TEXT)";
+                COLUMN_TIME + " TEXT, " +
+                COLUMN_NOTE + " TEXT DEFAULT 'N/A', " +
+                COLUMN_FAVORITE + " INTEGER DEFAULT 0)";
 
         db.execSQL(createTableStatement);
     }
@@ -57,6 +61,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_TEMP, brew.getTemp());
         cv.put(COLUMN_METHOD, brew.getMethod());
         cv.put(COLUMN_TIME, brew.getTime());
+        cv.put(COLUMN_NOTE, brew.getNote());
+        cv.put(COLUMN_FAVORITE, brew.getFavorite());
 
         long insert = db.insert(BREW_TABLE, null, cv);
         db.close();
@@ -93,8 +99,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 float temp = cursor.getFloat(5); // index 5 is the column where TEMPER is stored
                 String method = cursor.getString(6); // index 6 is the column where METHOD is stored
                 String time = cursor.getString(7); // index 7 is the column where TIME is stored
+                String note = cursor.getString(8);
+                Integer favorite = cursor.getInt(9);
 
-                BrewModel newBrew = new BrewModel(brewID, beans, brewer, grams, water, temp, method, time);
+                BrewModel newBrew = new BrewModel(brewID, beans, brewer, grams, water, temp, method, time, note, favorite);
                 returnList.add(newBrew);
             } while (cursor.moveToNext());
         }  // failure. do not add anything to the list.
@@ -106,4 +114,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         return returnList;
     }
+
+    public boolean updateFavorite(int id, int favoriteStatus) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("favorite", favoriteStatus); // Assuming 'favorite' is the column name
+
+        // Updating row
+        int updateStatus = db.update("brew_table", contentValues, "id = ?", new String[]{String.valueOf(id)});
+        db.close();
+
+        return updateStatus != -1; // returns true if the update was successful
+    }
+
 }

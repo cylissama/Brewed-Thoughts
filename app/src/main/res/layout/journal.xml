@@ -18,20 +18,42 @@
         android:textStyle="bold"
         android:textAlignment="center" />
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
+    <LinearLayout
+        android:id="@+id/linearLayoutBrew"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/viewBrewTitle"
-        android:layout_marginTop="10dp"
-        android:iconifiedByDefault="false"
-        app:queryHint="Search Brews" />
+        android:layout_height="50sp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/viewBrewTitle"
+        android:weightSum="2"
+        android:layout_marginTop="10sp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Search Brews"
+            android:layout_marginTop="10sp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/button_white"
+            android:layout_weight="1"/>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:iconifiedByDefault="false"
+            android:layout_weight="1"
+            app:queryHint="" />
+
+
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/brewRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/searchView"
+        android:layout_below="@id/linearLayoutBrew"
         android:layout_marginTop="10dp" />
 
 </RelativeLayout>

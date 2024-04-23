@@ -35,5 +35,10 @@ class Home : AppCompatActivity() {
             val intent = Intent(this, Tips::class.java)
             startActivity(intent)
         }
+
+        binding.favsButton.setOnClickListener {
+            val intent = Intent(this, Favorites::class.java)
+            startActivity(intent)
+        }
     }
 }

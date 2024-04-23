@@ -12,14 +12,13 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +56,8 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
                     // Check if the search term is found in any of the attributes
                     if (item.getBeans().toLowerCase().contains(filterPattern) ||
                             item.getBrewer().toLowerCase().contains(filterPattern) ||
-                            item.getMethod().toLowerCase().contains(filterPattern)) {
+                            item.getMethod().toLowerCase().contains(filterPattern) ||
+                            item.getFavorite().toString().toLowerCase().contains(filterPattern)){
                         filteredList.add(item);
                     }
                 }
@@ -100,11 +100,12 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
 
         final Dialog dialog = new Dialog(inflater.getContext());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.bottom_sheet_layout);
+        dialog.setContentView(R.layout.brew_popup_dialog);
 
-
+        // clickables
         Button delete = dialog.findViewById(R.id.deleteButton);
         Button note = dialog.findViewById(R.id.addNoteButton);
+        ImageView favorite = dialog.findViewById(R.id.favoriteButton);
 
         TextView title = dialog.findViewById(R.id.chooseTxt);
         TextView setBeans = dialog.findViewById(R.id.beansText);
@@ -113,6 +114,7 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
         TextView setGrams = dialog.findViewById(R.id.gramsText);
         TextView setWaterML = dialog.findViewById(R.id.mlText);
         TextView setWaterTemp = dialog.findViewById(R.id.tempText);
+        TextView setNote = dialog.findViewById(R.id.noteText);
 
         title.setText("Brewed on: " + brew.getTime());
         setBeans.setText(String.valueOf("Beans: " + brew.getBeans()));
@@ -121,6 +123,12 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
         setGrams.setText(String.valueOf("Coffee (gm): " + brew.getGrams()));
         setWaterML.setText(String.valueOf("Water (ml): " + brew.getWater()));
         setWaterTemp.setText(String.valueOf("Temp (°C): " + brew.getTemp()));
+        if (brew.getNote() != null) {
+            setNote.setText(String.valueOf("Note: " + brew.getNote()));
+        } else {
+            setNote.setText(String.valueOf("Note: N/A"));
+        }
+
 
         delete.setOnClickListener(v -> {
             // Delete the brew from the database
@@ -137,12 +145,25 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
         });
 
 
-        note.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(inflater.getContext(), "Note!", Toast.LENGTH_SHORT).show();
+        note.setOnClickListener(v -> Toast.makeText(inflater.getContext(), "Note!", Toast.LENGTH_SHORT).show());
+
+        favorite.setOnClickListener(v -> {
+            brew.setFavorite(1); // Set favorite in the local object
+            try {
+                if (dbHelper.updateFavorite(brew.getId(), brew.getFavorite())) {
+                    Toast.makeText(inflater.getContext(), "Favorited: " + brew.getFavorite(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(inflater.getContext(), "Failed to update favorite", Toast.LENGTH_SHORT).show();
+                }
+            } catch (Exception e) {
+                Toast.makeText(inflater.getContext(), "Error updating favorite: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                e.printStackTrace(); // Log the stack trace to help with debugging
             }
         });
+
+
+
+
 
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);

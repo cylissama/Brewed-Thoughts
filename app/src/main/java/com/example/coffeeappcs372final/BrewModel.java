@@ -1,15 +1,34 @@
 package com.example.coffeeappcs372final;
 
+import androidx.annotation.NonNull;
+
 public class BrewModel {
     private int id;
     private String beans;
     private String brewer;
+    private String method;
+    private final String time;
+    private String note;
     private float grams;
     private float water;
     private float temp;
-    private String method;
-    private String time;
+    private Integer favorite;
+    // 0 = not, 1 = favorite
+    // this is done bc SQLite had no native Boolean storage
 
+
+    public BrewModel(int id, String beans, String brewer, float grams, float water, float temp, String method, String time, String note, Integer favorite) {
+        this.id = id;
+        this.beans = beans;
+        this.brewer = brewer;
+        this.grams = grams;
+        this.water = water;
+        this.temp = temp;
+        this.method = method;
+        this.time = time;
+        this.favorite = favorite;
+        this.note = note;
+    }
     public BrewModel(int id, String beans, String brewer, float grams, float water, float temp, String method, String time) {
         this.id = id;
         this.beans = beans;
@@ -19,8 +38,11 @@ public class BrewModel {
         this.temp = temp;
         this.method = method;
         this.time = time;
+        this.favorite = 0;
+        this.note = null;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "BrewModel{" +
@@ -91,5 +113,21 @@ public class BrewModel {
     }
 
     public String getTime() { return time;}
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public Integer getFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(Integer favorite) {
+        this.favorite = favorite;
+    }
 }
 

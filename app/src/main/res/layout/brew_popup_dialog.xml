@@ -139,17 +139,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
-
+        <ImageView
+            android:id="@+id/favoriteButton"
+            android:layout_marginStart="20sp"
+            android:layout_width="25sp"
+            android:layout_height="25sp"
+            android:layout_gravity="center"
+            android:background="@drawable/heart_icon"
+            android:contentDescription="@string/favorite"
+            android:clickable="true"
+            android:focusable="true"/>
         <Button
             android:id="@+id/addNoteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Note"
+            android:text="@string/add_note"
+            android:textColor="@color/black"
             style="?android:attr/buttonBarButtonStyle" />
         <Button
             android:id="@+id/deleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="@string/delete"
             style="?android:attr/buttonBarButtonStyle" />
 

@@ -40,7 +40,6 @@
     <string name="brewers">Brewers</string>
 
 
-
     <!-- James Hoffman V60 Method -->
     <string name="james_hoffman_v60_description">James Hoffman\'s V60 coffee brewing technique includes specific water temperature and coffee-to-water ratios to enhance flavor extraction. The method involves steps like rinsing the paper filter, making a well in the coffee bed, blooming, swirling, and multiple pouring stages to achieve a balanced extraction.</string>
     <string-array name="james_hoffman_v60_steps">
@@ -92,5 +91,7 @@
     <string name="timer">Timer</string>
     <string name="past_brews">Past Brews</string>
     <string name="placeholder">placeholder</string>
+    <string name="favorites">Favorites</string>
+    <string name="favorite">Favorite</string>
 
 </resources>
