@@ -7,16 +7,6 @@
     android:orientation="vertical"
     android:background="@color/dark_coffee">
 
-<!--    <TextView-->
-<!--        android:id="@+id/brewBanner"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:textColor="@color/button_white"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textSize="40sp"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/brew_banner_text" />-->
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,6 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_brew"
+                android:textSize="40sp"
+                android:textColor="@color/button_white"
+                android:layout_gravity="center"/>
 
             <EditText
                 android:id="@+id/beansTextInput"
@@ -121,7 +119,8 @@
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:inputType="number"/>
+                    android:inputType="number"
+                    android:autofillHints="0" />
 
             </LinearLayout>
 
@@ -146,63 +145,65 @@
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:inputType="number"/>
+                    android:inputType="number"
+                    android:autofillHints="" />
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/brewSaveButton"
+                android:layout_width="100sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10sp"
+                android:backgroundTint="@color/button_white"
+                android:textColor="@color/dark_coffee"
+                android:text="@string/brew_save_button_text" />
 
         </LinearLayout>
 
     </FrameLayout>
 
-
-
-    <Button
-        android:id="@+id/brewSaveButton"
-        android:layout_width="300sp"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10sp"
-        android:backgroundTint="@color/button_white"
-        android:textColor="@color/dark_coffee"
-        android:text="@string/brew_save_button_text" />
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:background="@drawable/rounded_frame_brew">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <!--        <Button-->
-        <!--            android:id="@+id/brewBackButton"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintRight_toRightOf="parent"-->
-        <!--            android:backgroundTint="@color/button_white"-->
-        <!--            android:textColor="@color/dark_coffee"-->
-        <!--            android:layout_margin="10sp"-->
-        <!--            android:text="@string/back" />-->
-
-        <TextView
-            android:id="@+id/timerText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:textColor="@color/button_white"
-            android:textSize="40sp"
-            android:text="@string/_00_00_00"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/timerButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/start"
-            android:backgroundTint="@color/button_white"
-            android:textColor="@color/dark_coffee"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/timerText" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/timerTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/timer"
+                android:textColor="@color/button_white"
+                android:textSize="40sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/timerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:textSize="40sp"
+                android:text="@string/_00_00_00"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timerTitleText" />
+            <Button
+                android:id="@+id/timerButton"
+                android:layout_width="100sp"
+                android:layout_height="wrap_content"
+                android:text="@string/start"
+                android:layout_marginTop="10sp"
+                android:backgroundTint="@color/button_white"
+                android:textColor="@color/dark_coffee"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timerText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 </LinearLayout>

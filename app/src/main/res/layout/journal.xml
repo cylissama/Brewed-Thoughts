@@ -1,54 +1,37 @@
 <!-- activity_display_tags.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_coffee"
-    tools:context=".Journal">
+    android:background="@color/dark_coffee">
 
     <TextView
         android:id="@+id/viewBrewTitle"
-        android:textColor="@color/button_white"
-        android:textStyle="bold"
-        android:fontFamily="cursive"
-        android:textSize="60sp"
-        android:textAlignment="center"
-        android:layout_width="200sp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/journal_button_text" />
+        android:layout_marginTop="10sp"
+        android:text="@string/past_brews"
+        android:textColor="@color/button_white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textAlignment="center" />
 
-    <LinearLayout
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewBrewTitle"
+        android:layout_marginTop="10dp"
+        android:iconifiedByDefault="false"
+        app:queryHint="Search Brews" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/brewRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="86dp"
-            android:layout_weight="1"/>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="86dp"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColor="@color/button_white"
-                android:textSize="40sp"
-                android:text=""/>
-
-        </FrameLayout>
-
-    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/brewRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchView"
+        android:layout_marginTop="10dp" />
 
 </RelativeLayout>

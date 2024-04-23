@@ -1,14 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/light_coffee"/>
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow Layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#66000000"/> <!-- Semi-transparent black for shadow -->
+            <corners android:radius="27dp"/> <!-- slightly larger radius than the foreground -->
+            <padding android:bottom="2dp" android:right="2dp"/> <!-- Offset for shadow -->
+        </shape>
+    </item>
 
-    <stroke android:width="2dp"
-        android:color="@color/light_brown"/>
-
-    <padding android:left="10sp"
-        android:top="10sp"
-        android:right="10sp"
-        android:bottom="10sp"/>
-
-    <corners android:radius="25sp" />
-</shape>
+    <!-- Foreground Layer -->
+    <item android:top="2dp" android:left="2dp">
+        <shape>
+            <solid android:color="@color/light_coffee"/>
+            <stroke android:width="2dp" android:color="@color/light_brown"/>
+            <corners android:radius="25dp"/>
+            <padding android:left="10dp" android:top="10dp" android:right="10dp" android:bottom="10dp"/>
+        </shape>
+    </item>
+</layer-list>

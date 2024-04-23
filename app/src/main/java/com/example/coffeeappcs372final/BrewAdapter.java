@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,20 +21,60 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> {
+public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> implements Filterable {
 
     private final List<BrewModel> brewsList;
+    private final List<BrewModel> brewsListFull; // A full list to hold all data
     private final LayoutInflater inflater;
     private final DataBaseHelper dbHelper;
 
-    public BrewAdapter(Context context, List<BrewModel> tagsList, DataBaseHelper dbHelper) {
+    public BrewAdapter(Context context, List<BrewModel> brewsList, DataBaseHelper dbHelper) {
         this.inflater = LayoutInflater.from(context);
-        this.brewsList = tagsList;
+        this.brewsList = brewsList;
         this.dbHelper = dbHelper;
+        this.brewsListFull = new ArrayList<>(brewsList); // Initialize the full list
     }
+    @Override
+    public Filter getFilter() {
+        return brewFilter;
+    }
+
+    Filter brewFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<BrewModel> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(brewsListFull);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (BrewModel item : brewsListFull) {
+                    // Check if the search term is found in any of the attributes
+                    if (item.getBeans().toLowerCase().contains(filterPattern) ||
+                            item.getBrewer().toLowerCase().contains(filterPattern) ||
+                            item.getMethod().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            brewsList.clear();
+            brewsList.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 
     @NonNull
     @Override

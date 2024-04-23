@@ -6,6 +6,7 @@ import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
@@ -69,14 +70,14 @@ class Brew : AppCompatActivity() {
             handler.removeCallbacks(updateTimer)
             timerRunning = false
             binding.timerButton.text = "Start"
-            binding.timerText.text = "${formatTime(timeElapsed)}"
+            binding.timerText.text = formatTime(timeElapsed)
         }
     }
 
     private val updateTimer = object : Runnable {
         override fun run() {
             timeElapsed = System.currentTimeMillis() - startTime
-            binding.timerText.text = "${formatTime(timeElapsed)}"
+            binding.timerText.text = formatTime(timeElapsed)
             handler.postDelayed(this, 1000)
         }
     }

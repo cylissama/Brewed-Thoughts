@@ -88,5 +88,9 @@
     <string name="pour_over">Pour Over</string>
     <string name="start">Start</string>
     <string name="_00_00_00">00:00:00</string>
+    <string name="create_brew">Create Brew</string>
+    <string name="timer">Timer</string>
+    <string name="past_brews">Past Brews</string>
+    <string name="placeholder">placeholder</string>
 
 </resources>
