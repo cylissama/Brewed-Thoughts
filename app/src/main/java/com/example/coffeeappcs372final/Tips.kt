@@ -22,16 +22,18 @@ class Tips : AppCompatActivity() {
         val methodFragment = MethodFragment.newInstance()
         replaceFragment(methodFragment)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         setupListeners()
 
     }
 
     private fun setupListeners() {
 
-        binding.tipsBackButton.setOnClickListener {
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
-        }
+//        binding.tipsBackButton.setOnClickListener {
+//            val intent = Intent(this, Home::class.java)
+//            startActivity(intent)
+//        }
 
         binding.brewersButton.setOnClickListener {
             val brewerFragment = BrewersFragment.newInstance()

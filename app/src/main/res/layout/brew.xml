@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/dark_coffee">
 
-    <TextView
-        android:id="@+id/brewBanner"
-        android:layout_gravity="center"
-        android:textColor="@color/button_white"
-        android:textStyle="bold"
-        android:textSize="40sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/brew_banner_text" />
+<!--    <TextView-->
+<!--        android:id="@+id/brewBanner"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:textColor="@color/button_white"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="40sp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/brew_banner_text" />-->
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -161,7 +162,8 @@
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:layout_marginTop="10sp"
-        android:background="@drawable/custom_button"
+        android:backgroundTint="@color/button_white"
+        android:textColor="@color/dark_coffee"
         android:text="@string/brew_save_button_text" />
 
 
@@ -169,15 +171,38 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/brewBackButton"
+        <!--        <Button-->
+        <!--            android:id="@+id/brewBackButton"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintRight_toRightOf="parent"-->
+        <!--            android:backgroundTint="@color/button_white"-->
+        <!--            android:textColor="@color/dark_coffee"-->
+        <!--            android:layout_margin="10sp"-->
+        <!--            android:text="@string/back" />-->
+
+        <TextView
+            android:id="@+id/timerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:background="@drawable/custom_button"
-            android:layout_margin="10sp"
-            android:text="@string/back" />
+            android:layout_marginTop="20sp"
+            android:textColor="@color/button_white"
+            android:textSize="40sp"
+            android:text="@string/_00_00_00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/timerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start"
+            android:backgroundTint="@color/button_white"
+            android:textColor="@color/dark_coffee"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timerText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

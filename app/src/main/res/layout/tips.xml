@@ -15,7 +15,7 @@
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="8sp"
+        android:layout_margin="20sp"
         android:layout_weight="1"
         android:background="@drawable/rounded_frame_layout" />
 
@@ -23,14 +23,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_marginBottom="10sp">
+
         <Button
             android:id="@+id/methodsButton"
             android:textSize="12sp"
             android:layout_width="110sp"
             android:layout_height="match_parent"
             android:text="Methods"
-            android:background="@drawable/custom_button"
+            android:backgroundTint="@color/button_white"
+            android:textColor="@color/dark_coffee"
             android:layout_margin="1sp"/>
 
         <Button
@@ -39,7 +42,8 @@
             android:layout_width="110sp"
             android:layout_height="match_parent"
             android:text="Brewers"
-            android:background="@drawable/custom_button"
+            android:backgroundTint="@color/button_white"
+            android:textColor="@color/dark_coffee"
             android:layout_margin="1sp"/>
 
         <Button
@@ -48,17 +52,19 @@
             android:layout_width="100sp"
             android:layout_height="match_parent"
             android:text="Beans"
-            android:background="@drawable/custom_button"
+            android:backgroundTint="@color/button_white"
+            android:textColor="@color/dark_coffee"
             android:layout_margin="1sp"/>
 
-        <Button
-            android:id="@+id/tipsBackButton"
-            android:textSize="10sp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/back"
-            android:background="@drawable/custom_button"
-            android:layout_margin="1sp"/>
+<!--        <Button-->
+<!--            android:id="@+id/tipsBackButton"-->
+<!--            android:textSize="10sp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="@string/back"-->
+<!--            android:backgroundTint="@color/button_white"-->
+<!--            android:textColor="@color/dark_coffee"-->
+<!--            android:layout_margin="1sp"/>-->
 
     </LinearLayout>
 </LinearLayout>

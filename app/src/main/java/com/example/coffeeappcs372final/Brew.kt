@@ -1,29 +1,42 @@
 package com.example.coffeeappcs372final
 
-import android.content.Intent
 import android.database.sqlite.SQLiteConstraintException
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.widget.ArrayAdapter
-import android.widget.NumberPicker
+import android.widget.Button
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import com.example.coffeeappcs372final.databinding.BrewBinding
+import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
-import kotlinx.coroutines.*
+import java.util.Timer
 
 class Brew : AppCompatActivity() {
 
     private lateinit var binding: BrewBinding
+    // for timer
+    private var timerRunning = false
+    private var startTime = 0L
+    private var handler = Handler(Looper.getMainLooper())
+    private var timeElapsed = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = BrewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val timer: Timer
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setupListeners()
         setupSpinners()
@@ -35,11 +48,44 @@ class Brew : AppCompatActivity() {
             addToDataBase()
         }
 
-        binding.brewBackButton.setOnClickListener {
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
-        }
+//        binding.brewBackButton.setOnClickListener {
+//            val intent = Intent(this, Home::class.java)
+//            startActivity(intent)
+//        }
 
+        val timerButton = binding.timerButton
+        timerButton.setOnClickListener {
+            startTime()
+        }
+    }
+
+    private fun startTime() {
+        if (!timerRunning) {
+            startTime = System.currentTimeMillis() - timeElapsed
+            handler.postDelayed(updateTimer, 0)
+            timerRunning = true
+            binding.timerButton.text = "Stop"
+        } else {
+            handler.removeCallbacks(updateTimer)
+            timerRunning = false
+            binding.timerButton.text = "Start"
+            binding.timerText.text = "${formatTime(timeElapsed)}"
+        }
+    }
+
+    private val updateTimer = object : Runnable {
+        override fun run() {
+            timeElapsed = System.currentTimeMillis() - startTime
+            binding.timerText.text = "${formatTime(timeElapsed)}"
+            handler.postDelayed(this, 1000)
+        }
+    }
+
+    private fun formatTime(millis: Long): String {
+        val seconds = (millis / 1000) % 60
+        val minutes = (millis / (1000 * 60)) % 60
+        val hours = (millis / (1000 * 60 * 60)) % 24
+        return String.format("%02d:%02d:%02d", hours, minutes, seconds)
     }
 
 

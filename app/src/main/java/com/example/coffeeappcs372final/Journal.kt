@@ -22,15 +22,17 @@ class Journal : AppCompatActivity() {
         binding = JournalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         setupRecyclerView()
         setupListeners()
     }
 
     private fun setupListeners() {
-        binding.journalBackButton.setOnClickListener {
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
-        }
+//        binding.journalBackButton.setOnClickListener {
+//            val intent = Intent(this, Home::class.java)
+//            startActivity(intent)
+//        }
     }
 
     private fun setupRecyclerView() {

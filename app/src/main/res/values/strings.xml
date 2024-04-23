@@ -86,5 +86,7 @@
     <string name="dark_roast">Shiny black, oily surface. More bitter than the others. Darker color. Little lower water temp. Sometimes grind size should be larger.</string>
     <string name="HarioV60">Pour over involves pouring hot water over coffee grounds in a filter. The water drains through the coffee and filter into a carafe or mug. Devices like the V60 and Chemex are popular for this brewing method. It\'s favored for its ability to control every variable of the brewing process and highlight nuanced flavors.</string>
     <string name="pour_over">Pour Over</string>
+    <string name="start">Start</string>
+    <string name="_00_00_00">00:00:00</string>
 
 </resources>
