@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -128,6 +130,7 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
         } else {
             setNote.setText(String.valueOf("Note: N/A"));
         }
+        if (brew.getFavorite() == 1) {favorite.setImageResource(R.drawable.heart_icon_faved); }// if its faved
 
 
         delete.setOnClickListener(v -> {
@@ -148,10 +151,19 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
         note.setOnClickListener(v -> Toast.makeText(inflater.getContext(), "Note!", Toast.LENGTH_SHORT).show());
 
         favorite.setOnClickListener(v -> {
-            brew.setFavorite(1); // Set favorite in the local object
+            int heart;
+            if (brew.getFavorite()==1){
+                brew.setFavorite(0);
+                heart = R.drawable.heart_icon_unfaved;
+                //heart = ContextCompat.getDrawable(this.inflater.getContext(), R.drawable.heart_icon_unfaved);
+            } else {
+                brew.setFavorite(1);
+                heart = R.drawable.heart_icon_faved;
+                //heart = ContextCompat.getDrawable(this.inflater.getContext(), R.drawable.heart_icon_faved);
+            }
             try {
                 if (dbHelper.updateFavorite(brew.getId(), brew.getFavorite())) {
-                    Toast.makeText(inflater.getContext(), "Favorited: " + brew.getFavorite(), Toast.LENGTH_SHORT).show();
+                    favorite.setImageResource(heart);
                 } else {
                     Toast.makeText(inflater.getContext(), "Failed to update favorite", Toast.LENGTH_SHORT).show();
                 }

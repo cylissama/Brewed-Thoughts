@@ -25,13 +25,6 @@ class Favorites : AppCompatActivity() {
     }
 
     private fun setupListeners() {
-        binding.favoriteSwitch.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                adapter.filter.filter("1") // Show only favorites
-            } else {
-                adapter.filter.filter("0") // Show all items, assuming 0 means not a favorite
-            }
-        }
     }
 
 
@@ -47,5 +40,6 @@ class Favorites : AppCompatActivity() {
         } catch (e: Exception) {
             Toast.makeText(this@Favorites, "Error Loading from DB", Toast.LENGTH_LONG).show()
         }
+        adapter.filter.filter("1")
     }
 }

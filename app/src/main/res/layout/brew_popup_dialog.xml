@@ -4,7 +4,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dialog_box">
+    android:background="@drawable/dialog_box"
+    android:layout_marginLeft="20sp"
+    android:layout_marginRight="20sp">
 
     <TextView
         android:id="@+id/chooseTxt"
@@ -145,7 +147,7 @@
             android:layout_width="25sp"
             android:layout_height="25sp"
             android:layout_gravity="center"
-            android:background="@drawable/heart_icon"
+            android:background="@drawable/heart_icon_unfaved"
             android:contentDescription="@string/favorite"
             android:clickable="true"
             android:focusable="true"/>
