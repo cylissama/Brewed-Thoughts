@@ -156,6 +156,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10sp"
+                android:background="@drawable/mybutton"
                 android:backgroundTint="@color/button_white"
                 android:textColor="@color/dark_coffee"
                 android:text="@string/brew_save_button_text" />
@@ -199,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/start"
                 android:layout_marginTop="10sp"
-                android:backgroundTint="@color/button_white"
+                android:background="@drawable/mybutton"
                 android:textColor="@color/dark_coffee"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

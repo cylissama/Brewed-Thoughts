@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     android:background="@color/dark_coffee">
 
     <TextView
@@ -30,9 +31,9 @@
     <Button
         android:id="@+id/brewButton"
         android:layout_width="150sp"
-        android:layout_height="70sp"
+        android:layout_height="60sp"
         android:layout_gravity="center"
-        android:backgroundTint="@color/button_white"
+        android:background="@drawable/mybutton"
         android:textColor="@color/dark_coffee"
         android:layout_margin="5dp"
         android:text="@string/brew_button_text" />
@@ -41,8 +42,8 @@
         android:id="@+id/journalButton"
         android:layout_gravity="center"
         android:layout_width="150sp"
-        android:layout_height="70sp"
-        android:backgroundTint="@color/button_white"
+        android:layout_height="60sp"
+        android:background="@drawable/mybutton"
         android:textColor="@color/dark_coffee"
         android:layout_margin="5dp"
         android:text="@string/journal_button_text" />
@@ -51,8 +52,8 @@
         android:id="@+id/favsButton"
         android:layout_gravity="center"
         android:layout_width="150sp"
-        android:layout_height="70sp"
-        android:backgroundTint="@color/button_white"
+        android:layout_height="60sp"
+        android:background="@drawable/mybutton"
         android:textColor="@color/dark_coffee"
         android:layout_marginTop="5sp"
         android:text="@string/favorites" />
@@ -61,8 +62,8 @@
         android:id="@+id/tipsButton"
         android:layout_gravity="center"
         android:layout_width="150sp"
-        android:layout_height="70sp"
-        android:backgroundTint="@color/button_white"
+        android:layout_height="60sp"
+        android:background="@drawable/mybutton"
         android:textColor="@color/dark_coffee"
         android:layout_marginTop="5sp"
         android:text="@string/tips_button_text" />

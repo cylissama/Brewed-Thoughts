@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/dark_coffee"
     android:orientation="vertical"
-    tools:context=".Tips">
+    tools:context=".presentation.Tips">
 
     <!-- FrameLayout for content -->
 
@@ -32,9 +32,9 @@
             android:layout_width="110sp"
             android:layout_height="match_parent"
             android:text="Methods"
-            android:backgroundTint="@color/button_white"
+            android:background="@drawable/mybutton"
             android:textColor="@color/dark_coffee"
-            android:layout_margin="1sp"/>
+            android:layout_margin="10sp"/>
 
         <Button
             android:id="@+id/brewersButton"
@@ -42,9 +42,9 @@
             android:layout_width="110sp"
             android:layout_height="match_parent"
             android:text="Brewers"
-            android:backgroundTint="@color/button_white"
+            android:background="@drawable/mybutton"
             android:textColor="@color/dark_coffee"
-            android:layout_margin="1sp"/>
+            android:layout_margin="10sp"/>
 
         <Button
             android:id="@+id/beansButton"
@@ -52,9 +52,9 @@
             android:layout_width="100sp"
             android:layout_height="match_parent"
             android:text="Beans"
-            android:backgroundTint="@color/button_white"
+            android:background="@drawable/mybutton"
             android:textColor="@color/dark_coffee"
-            android:layout_margin="1sp"/>
+            android:layout_margin="10sp"/>
 
 <!--        <Button-->
 <!--            android:id="@+id/tipsBackButton"-->

@@ -1,4 +1,4 @@
-package com.example.coffeeappcs372final;
+package com.example.coffeeappcs372final.database;
 
 import androidx.annotation.NonNull;
 

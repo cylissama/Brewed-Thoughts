@@ -1,16 +1,18 @@
 <resources>
-    <string name="app_name">CoffeeAppCS372Final</string>
+    <string name="app_name">Brewed Thoughts</string>
 
     // the Home Activity Screen
     <string name="home_view_banner_text">Home</string>
     <string name="journal_button_text">Journal</string>
     <string name="brew_button_text">Brew</string>
     <string name="tips_button_text">Tips</string>
+    <string name="favorites">Favorites</string>
+
 
     <string name="welcome_user_text">Welcome User!</string>
 
     // the Brew Activity Screen
-    <string name="app_title">Brewed Thoughs</string>
+    <string name="app_title">Brewed Thoughts</string>
 
     <string name="brew_banner_text">Brew</string>
     <string name="beans_prompt_text">Beans</string>
@@ -91,7 +93,6 @@
     <string name="timer">Timer</string>
     <string name="past_brews">Past Brews</string>
     <string name="placeholder">placeholder</string>
-    <string name="favorites">Favorites</string>
     <string name="favorite">Favorite</string>
 
 </resources>

@@ -1,11 +1,10 @@
-package com.example.coffeeappcs372final
+package com.example.coffeeappcs372final.presentation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.coffeeappcs372final.databinding.FragmentBrewersBinding
 import com.example.coffeeappcs372final.databinding.FragmentMethodBinding
 
 class MethodFragment : Fragment() {

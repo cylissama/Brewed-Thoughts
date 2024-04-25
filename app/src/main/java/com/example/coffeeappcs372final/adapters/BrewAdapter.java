@@ -1,16 +1,17 @@
-package com.example.coffeeappcs372final;
+package com.example.coffeeappcs372final.adapters;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -18,9 +19,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.coffeeappcs372final.R;
+import com.example.coffeeappcs372final.database.BrewModel;
+import com.example.coffeeappcs372final.database.DataBaseHelper;
+import com.example.coffeeappcs372final.presentation.Brew;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,21 +35,22 @@ import java.util.Objects;
 public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> implements Filterable {
 
     private final List<BrewModel> brewsList;
-    private final List<BrewModel> brewsListFull; // A full list to hold all data
+    private final List<BrewModel> brewsListFull;
     private final LayoutInflater inflater;
     private final DataBaseHelper dbHelper;
+    private Boolean isCard = false;
 
-    public BrewAdapter(Context context, List<BrewModel> brewsList, DataBaseHelper dbHelper) {
+    public BrewAdapter(Context context, List<BrewModel> brewsList, DataBaseHelper dbHelper, Boolean isCard) {
         this.inflater = LayoutInflater.from(context);
         this.brewsList = brewsList;
         this.dbHelper = dbHelper;
-        this.brewsListFull = new ArrayList<>(brewsList); // Initialize the full list
+        this.brewsListFull = new ArrayList<>(brewsList);
+        this.isCard = isCard;
     }
     @Override
     public Filter getFilter() {
         return brewFilter;
     }
-
     Filter brewFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
@@ -81,7 +88,12 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.brew_item, parent, false);
+        View view;
+        if (!this.isCard) {
+            view = inflater.inflate(R.layout.brew_item, parent, false);
+        } else {
+            view = inflater.inflate(R.layout.brew_item_favorites, parent, false);
+        }
         return new ViewHolder(view);
     }
 
@@ -89,11 +101,14 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         BrewModel brew = brewsList.get(position);
-        String text = "Brew on " + brew.getTime() +
+        String brewText = "Brew on " + brew.getTime() +
                 "\nBeans: " + brew.getBeans() +
                 "\nBrewer: " + brew.getBrewer();
+        String noteText = brew.getNote();
 
-        holder.brewView.setText(text);
+        holder.brewView.setText(brewText);
+
+        holder.noteView.setText(noteText);
 
         holder.brewContainer.setOnClickListener(v -> showDialog(brew));
     }
@@ -148,7 +163,28 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
         });
 
 
-        note.setOnClickListener(v -> Toast.makeText(inflater.getContext(), "Note!", Toast.LENGTH_SHORT).show());
+        note.setOnClickListener(v -> {
+            // Create an AlertDialog for entering the note
+            AlertDialog.Builder builder = new AlertDialog.Builder(inflater.getContext());
+            builder.setTitle("Edit Note");
+
+            // Set up the input
+            final EditText input = new EditText(inflater.getContext());
+            // Specify the type of input expected
+            input.setInputType(InputType.TYPE_CLASS_TEXT);
+            input.setText(brew.getNote()); // Pre-fill with the current note
+            builder.setView(input);
+
+            // Set up the buttons
+            builder.setPositiveButton("OK", (alertdialog, which) -> {
+                String newNote = input.getText().toString();
+                updateNoteInDatabase(newNote, brew);
+            });
+            builder.setNegativeButton("Cancel", (alertdialog, which) -> dialog.cancel());
+
+            builder.show();
+        });
+
 
         favorite.setOnClickListener(v -> {
             int heart;
@@ -173,30 +209,44 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
             }
         });
 
-
-
-
-
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().setGravity(Gravity.CENTER);
 
     }
-
     @Override
     public int getItemCount() {
         return brewsList.size();
     }
 
+    private void updateNoteInDatabase(String note, BrewModel brew) {
+        // Update the brew model
+        brew.setNote(note);
+
+        // Update the database
+        if (dbHelper.updateNote(brew.getId(), brew.getNote())) {
+            int position = brewsList.indexOf(brew);
+            if (position >= 0) {
+                brewsList.set(position, brew);
+                notifyItemChanged(position);  // Notify the adapter of item changed at the position
+            }
+        } else {
+            Toast.makeText(inflater.getContext(), "Failed to update note!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView brewView;
+        TextView noteView;
         CardView brewContainer;
-
         ViewHolder(View itemView) {
             super(itemView);
             brewView = itemView.findViewById(R.id.brewView);
             brewContainer = itemView.findViewById(R.id.brewContainer);
+            noteView = itemView.findViewById(R.id.noteView);
         }
+
     }
 }

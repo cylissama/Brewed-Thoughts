@@ -1,18 +1,17 @@
-package com.example.coffeeappcs372final
+package com.example.coffeeappcs372final.presentation
 
 import android.database.sqlite.SQLiteConstraintException
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import android.view.MenuItem
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.Spinner
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import com.example.coffeeappcs372final.R
+import com.example.coffeeappcs372final.database.BrewModel
+import com.example.coffeeappcs372final.database.DataBaseHelper
 import com.example.coffeeappcs372final.databinding.BrewBinding
 import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
@@ -112,7 +111,8 @@ class Brew : AppCompatActivity() {
     }
 
     private fun addToDataBase() = CoroutineScope(Dispatchers.IO).launch {
-        val dataBaseHelper: DataBaseHelper = DataBaseHelper(this@Brew)
+        val dataBaseHelper: DataBaseHelper =
+            DataBaseHelper(this@Brew)
         val beans: String = binding.beansTextInput.text.toString()
         val brewer: String = binding.brewerSpinner.selectedItem.toString()
         val grams: Float = binding.coffeeGramsNumberPicker.text.toString().toFloatOrNull() ?: 0f
@@ -125,7 +125,18 @@ class Brew : AppCompatActivity() {
         val time: String = simpleDateFormat.format(Date()).toString()
 
         try {
-            val success = dataBaseHelper.addBrew(BrewModel(-1, beans, brewer, grams, water, temp, method, time))
+            val success = dataBaseHelper.addBrew(
+                BrewModel(
+                    -1,
+                    beans,
+                    brewer,
+                    grams,
+                    water,
+                    temp,
+                    method,
+                    time
+                )
+            )
             withContext(Dispatchers.Main) {
                 if (success) {
                     Toast.makeText(this@Brew, "Brew added successfully!", Toast.LENGTH_LONG).show()

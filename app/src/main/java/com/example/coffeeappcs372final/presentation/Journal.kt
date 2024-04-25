@@ -1,15 +1,13 @@
-package com.example.coffeeappcs372final
+package com.example.coffeeappcs372final.presentation
 
 import android.os.Bundle
 import androidx.appcompat.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.coffeeappcs372final.adapters.BrewAdapter
+import com.example.coffeeappcs372final.database.DataBaseHelper
 import com.example.coffeeappcs372final.databinding.JournalBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 
 class Journal : AppCompatActivity() {
@@ -23,6 +21,7 @@ class Journal : AppCompatActivity() {
         binding = JournalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // enable the actionbar and implement back arrow
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setupRecyclerView()
@@ -32,8 +31,6 @@ class Journal : AppCompatActivity() {
 
     private fun setupListeners() {
 
-        // here we make sure to use the androidx.appcompat.widget.SearchView
-        // the OnQueryTextListener will not work with the default SearchView class
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 // Add your code here if you need to handle the query submission
@@ -53,9 +50,15 @@ class Journal : AppCompatActivity() {
         brewRecyclerView.layoutManager = LinearLayoutManager(this)
 
         try {
-            val dataBaseHelper = DataBaseHelper(this@Journal)
+            val dataBaseHelper =
+                DataBaseHelper(this@Journal)
             val allBrews = dataBaseHelper.allBrews
-            adapter = BrewAdapter(this@Journal, allBrews, dataBaseHelper)
+            adapter = BrewAdapter(
+                this@Journal,
+                allBrews,
+                dataBaseHelper,
+                false
+            )
             brewRecyclerView.adapter = adapter
         } catch (e: Exception) {
             Toast.makeText(this@Journal, "Error Loading from DB", Toast.LENGTH_LONG).show()

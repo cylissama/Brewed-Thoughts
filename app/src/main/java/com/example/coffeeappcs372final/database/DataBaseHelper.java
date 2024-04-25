@@ -1,10 +1,11 @@
-package com.example.coffeeappcs372final;
+package com.example.coffeeappcs372final.database;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.Cursor;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -121,10 +122,23 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         contentValues.put("favorite", favoriteStatus); // Assuming 'favorite' is the column name
 
         // Updating row
-        int updateStatus = db.update("brew_table", contentValues, "id = ?", new String[]{String.valueOf(id)});
+        int result = db.update("brew_table", contentValues, "id = ?", new String[]{String.valueOf(id)});
         db.close();
 
-        return updateStatus != -1; // returns true if the update was successful
+        return result != -1; // returns true if the update was successful
     }
+
+    public boolean updateNote(int id, String note) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("note", note);
+
+        // Updating row
+        int result = db.update("brew_table", contentValues, "id = ?", new String[]{String.valueOf(id)});
+        db.close();
+
+        return result != -1;
+    }
+
 
 }

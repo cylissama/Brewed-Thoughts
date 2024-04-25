@@ -1,8 +1,9 @@
-package com.example.coffeeappcs372final
+package com.example.coffeeappcs372final.presentation
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.coffeeappcs372final.databinding.HomeBinding
 
 class Home : AppCompatActivity() {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/button_white"
-    tools:context=".BeansFragment">
+    tools:context=".presentation.BeansFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

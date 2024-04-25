@@ -15,6 +15,11 @@
           <theme>@style/Theme.CoffeeAppCS372Final</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/brew_item_favorites.xml">
+        <config>
+          <theme>@style/Theme.AppCompat.Light</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/brew_popup_dialog.xml">
         <config>
           <theme>@style/Theme.CoffeeAppCS372Final</theme>
@@ -62,7 +67,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62344a19-7f4f-428d-ab44-becae79e9fdd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/heart_icon_faved.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/mybutton.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/brew_item_favorites.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
@@ -70,14 +76,30 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/BrewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/BrewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/Favorites.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/Favorites.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/heart_icon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/heart_icon_unfaved.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/brew_popup_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/brew_popup_dialog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/BeansFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/BeansFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/Brew.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/Brew.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/BrewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/adapters/BrewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/BrewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/database/BrewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/BrewersFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/BrewersFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/DataBaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/database/DataBaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/Favorites.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/Favorites.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/Home.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/Home.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/Journal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/Journal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/MethodFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/MethodFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/Tips.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/Tips.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/custom_button.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/brew.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/brew.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/brew_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/brew_item.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/favorites.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/favorites.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_brewers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_brewers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_method.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_method.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tips.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tips.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,9 +118,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="valueResourceFile" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -123,15 +145,22 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/Users/cylis/AndroidStudioProjects/Brewed Thoughts"
+    "last_opened_file_path": "/Users/cylis/AndroidStudioProjects/Brewed Thoughts/app/src/main/res/drawable"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
     </key>
     <key name="android.template.-1206035502">
       <recent name="com.example.coffeeappcs372final" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.coffeeappcs372final.presentation" />
     </key>
   </component>
   <component name="RunManager">
