@@ -39,13 +39,15 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
     private final LayoutInflater inflater;
     private final DataBaseHelper dbHelper;
     private Boolean isCard = false;
+    private Boolean boxed = false;
 
-    public BrewAdapter(Context context, List<BrewModel> brewsList, DataBaseHelper dbHelper, Boolean isCard) {
+    public BrewAdapter(Context context, List<BrewModel> brewsList, DataBaseHelper dbHelper, Boolean isCard, Boolean boxed) {
         this.inflater = LayoutInflater.from(context);
         this.brewsList = brewsList;
         this.dbHelper = dbHelper;
         this.brewsListFull = new ArrayList<>(brewsList);
         this.isCard = isCard;
+        this.boxed = boxed;
     }
     @Override
     public Filter getFilter() {
@@ -89,14 +91,15 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
-        if (!this.isCard) {
-            view = inflater.inflate(R.layout.brew_item, parent, false);
-        } else {
+        view = inflater.inflate(R.layout.brew_item, parent, false);
+        if (this.isCard) {
             view = inflater.inflate(R.layout.brew_item_favorites, parent, false);
+        }
+        if (this.boxed) {
+            view = inflater.inflate(R.layout.brew_item_boxed, parent, false);
         }
         return new ViewHolder(view);
     }
-
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {

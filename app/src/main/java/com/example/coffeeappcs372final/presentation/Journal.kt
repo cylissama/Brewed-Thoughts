@@ -57,6 +57,7 @@ class Journal : AppCompatActivity() {
                 this@Journal,
                 allBrews,
                 dataBaseHelper,
+                false,
                 false
             )
             brewRecyclerView.adapter = adapter

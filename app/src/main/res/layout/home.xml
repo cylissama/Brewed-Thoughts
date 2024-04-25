@@ -20,51 +20,95 @@
         android:layout_margin="10sp"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/coffeeLogoView"
-        android:layout_width="433dp"
-        android:layout_height="300dp"
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:contentDescription="@string/coffee_logo"
-        app:srcCompat="@drawable/coffee_shop_logo_design_png" />
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="20sp"
+        android:background="@drawable/rounded_frame_brew">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10sp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:textColor="@color/button_white"
+                android:textSize="30sp"
+                android:layout_gravity="center"
+                android:text="@string/recent_brews"/>
 
-    <Button
-        android:id="@+id/brewButton"
-        android:layout_width="150sp"
-        android:layout_height="60sp"
-        android:layout_gravity="center"
-        android:background="@drawable/mybutton"
-        android:textColor="@color/dark_coffee"
-        android:layout_margin="5dp"
-        android:text="@string/brew_button_text" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/brewRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30sp"
+                android:layout_marginLeft="5sp"
+                android:layout_marginRight="5sp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:scrollbars="horizontal" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/journalButton"
-        android:layout_gravity="center"
-        android:layout_width="150sp"
-        android:layout_height="60sp"
-        android:background="@drawable/mybutton"
-        android:textColor="@color/dark_coffee"
-        android:layout_margin="5dp"
-        android:text="@string/journal_button_text" />
+    </FrameLayout>
 
-    <Button
-        android:id="@+id/favsButton"
-        android:layout_gravity="center"
-        android:layout_width="150sp"
-        android:layout_height="60sp"
-        android:background="@drawable/mybutton"
-        android:textColor="@color/dark_coffee"
-        android:layout_marginTop="5sp"
-        android:text="@string/favorites" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_frame_brew"
+        android:layout_margin="20sp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/brewButton"
+                android:layout_gravity="center"
+                android:layout_width="150sp"
+                android:layout_height="60sp"
+                android:background="@drawable/new_custom_button1"
+                android:textColor="@color/dark_coffee"
+                android:layout_marginTop="20sp"
+                android:text="@string/brew_button_text" />
 
-    <Button
-        android:id="@+id/tipsButton"
-        android:layout_gravity="center"
-        android:layout_width="150sp"
-        android:layout_height="60sp"
-        android:background="@drawable/mybutton"
-        android:textColor="@color/dark_coffee"
-        android:layout_marginTop="5sp"
-        android:text="@string/tips_button_text" />
+            <Button
+                android:id="@+id/journalButton"
+                android:layout_gravity="center"
+                android:layout_width="150sp"
+                android:layout_height="60sp"
+                android:background="@drawable/new_custom_button2"
+                android:textColor="@color/dark_coffee"
+                android:layout_marginTop="5sp"
+                android:text="@string/journal_button_text" />
+
+            <Button
+                android:id="@+id/favsButton"
+                android:layout_gravity="center"
+                android:layout_width="150sp"
+                android:layout_height="60sp"
+                android:background="@drawable/new_custom_button1"
+                android:textColor="@color/dark_coffee"
+                android:layout_marginTop="10sp"
+                android:text="@string/favorites" />
+
+            <Button
+                android:id="@+id/tipsButton"
+                android:layout_gravity="center"
+                android:layout_width="150sp"
+                android:layout_height="60sp"
+                android:background="@drawable/new_custom_button2"
+                android:textColor="@color/dark_coffee"
+                android:layout_marginTop="10sp"
+                android:text="@string/tips_button_text" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
 </LinearLayout>

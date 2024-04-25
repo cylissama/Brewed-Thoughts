@@ -28,6 +28,7 @@
     <string name="brew">Brew</string>
 
     <string-array name="brewers">
+        <item>Select</item>
         <item>AeroPress</item>
         <item>Chemex</item>
         <item>Drip</item>
@@ -94,5 +95,6 @@
     <string name="past_brews">Past Brews</string>
     <string name="placeholder">placeholder</string>
     <string name="favorite">Favorite</string>
+    <string name="recent_brews">Recent Brews</string>
 
 </resources>

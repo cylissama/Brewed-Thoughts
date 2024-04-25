@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/brewContainer"
         android:layout_margin="5sp"
-        app:cardBackgroundColor="@color/light_brown"
+        app:cardBackgroundColor="@color/lighter_coffee"
         android:layout_gravity="center_horizontal"
         app:cardCornerRadius="20dp"
         app:cardElevation="5sp"
@@ -29,7 +29,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/brew_item_container"
-            app:cardBackgroundColor="@color/lighter_coffee"
+            app:cardBackgroundColor="@color/light_brown"
             app:cardCornerRadius="20dp"
             app:cardElevation="5sp"
             app:cardMaxElevation="12dp"
@@ -52,7 +52,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/note_holder"
-            app:cardBackgroundColor="@color/lighter_coffee"
+            app:cardBackgroundColor="@color/light_brown"
             app:cardCornerRadius="20dp"
             app:cardElevation="5sp"
             app:cardMaxElevation="12dp"

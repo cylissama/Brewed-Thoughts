@@ -41,7 +41,8 @@ class Favorites : AppCompatActivity() {
                 this@Favorites,
                 allBrews,
                 dataBaseHelper,
-                true
+                true,
+                false
             )
             brewRecyclerView.adapter = adapter
         } catch (e: Exception) {

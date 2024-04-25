@@ -54,7 +54,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/linearLayoutBrew"
         android:layout_margin="10sp"
-        android:background="@drawable/rounded_frame_layout">
+        android:background="@drawable/rounded_frame_brew">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/brewRecyclerView"
             android:layout_width="match_parent"

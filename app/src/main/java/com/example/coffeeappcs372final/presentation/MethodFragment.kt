@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.coffeeappcs372final.R
 import com.example.coffeeappcs372final.adapters.TipsAdapter
 import com.example.coffeeappcs372final.databinding.FragmentMethodBinding
 
@@ -28,7 +29,8 @@ class MethodFragment : Fragment() {
     private fun setupRecyclerView() {
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
 
-        val tipsData = listOf("James Hoffman V60 Tip", "Hario V60 Tip", "James Hoffman Aeropress Tip")
+        val array = resources.getStringArray(R.array.james_hoffman_v60_steps)
+        val tipsData = array.toMutableList()
         adapter = TipsAdapter(requireContext(), tipsData)
         binding.recyclerView.adapter = adapter
     }

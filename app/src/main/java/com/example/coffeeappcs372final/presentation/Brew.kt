@@ -1,5 +1,6 @@
 package com.example.coffeeappcs372final.presentation
 
+import android.content.Context
 import android.database.sqlite.SQLiteConstraintException
 import android.os.Bundle
 import android.os.Handler
@@ -18,6 +19,10 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import java.util.Timer
+import android.media.AudioAttributes
+import android.media.SoundPool
+import android.view.inputmethod.InputMethodManager
+import androidx.core.view.get
 
 class Brew : AppCompatActivity() {
 
@@ -27,6 +32,9 @@ class Brew : AppCompatActivity() {
     private var startTime = 0L
     private var handler = Handler(Looper.getMainLooper())
     private var timeElapsed = 0L
+    private lateinit var soundPool: SoundPool
+    private var soundID: Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,18 +48,20 @@ class Brew : AppCompatActivity() {
 
         setupListeners()
         setupSpinners()
+        setupSoundPool()
     }
 
     private fun setupListeners() {
 
-        binding.brewSaveButton.setOnClickListener {
-            addToDataBase()
+        val saveButton = binding.brewSaveButton
+        saveButton.setOnClickListener {
+            if (areInputsValid()) {
+                addToDataBase()
+                playSound(soundID)
+            } else {
+                Toast.makeText(this@Brew, "Please fill in all fields before saving.", Toast.LENGTH_LONG).show()
+            }
         }
-
-//        binding.brewBackButton.setOnClickListener {
-//            val intent = Intent(this, Home::class.java)
-//            startActivity(intent)
-//        }
 
         val timerButton = binding.timerButton
         timerButton.setOnClickListener {
@@ -64,6 +74,65 @@ class Brew : AppCompatActivity() {
         }
     }
 
+    private fun setupSoundPool() {
+        val audioAttributes = AudioAttributes.Builder()
+            .setUsage(AudioAttributes.USAGE_GAME)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+            .build()
+
+        soundPool = SoundPool.Builder()
+            .setMaxStreams(1)
+            .setAudioAttributes(audioAttributes)
+            .build()
+
+        // Load the sound
+        soundID = soundPool.load(this, R.raw.ping, 1)
+
+    }
+
+    private fun setupSpinners() {
+
+        val brewerSpinner: Spinner = binding.brewerSpinner
+        val brewerAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.brewers,
+            android.R.layout.simple_spinner_item
+        )
+        brewerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        brewerSpinner.adapter = brewerAdapter
+    }
+
+    private fun areInputsValid(): Boolean {
+        return !(binding.beansTextInput.text.toString().trim().isEmpty() ||
+                binding.coffeeGramsNumberPicker.text.toString().trim().isEmpty() ||
+                binding.waterMLNumberPicker.text.toString().trim().isEmpty() ||
+                binding.waterTempNumberPicker.text.toString().trim().isEmpty() ||
+                binding.brewerSpinner.selectedItem == binding.brewerSpinner[0])
+    }
+
+    fun hideKeyboard() {
+        val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        // Find the currently focused view, so we can grab the correct window token from it.
+        val view = currentFocus
+        // If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view != null) {
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+    }
+
+    private fun clearInputFields() {
+        binding.beansTextInput.text.clear()
+        binding.coffeeGramsNumberPicker.text.clear()
+        binding.waterMLNumberPicker.text.clear()
+        binding.waterTempNumberPicker.text.clear()
+        binding.methodTextInput.text.clear()
+        binding.brewerSpinner.setSelection(0)
+    }
+
+    private fun playSound(id: Int) {
+        soundPool.play(id, 1f, 1f, 0, 0, 1f)
+    }
+
     private val updateTimer = object : Runnable {
         override fun run() {
             timeElapsed = System.currentTimeMillis() - startTime
@@ -71,7 +140,6 @@ class Brew : AppCompatActivity() {
             handler.postDelayed(this, 1000)
         }
     }
-
 
     private fun toggleTimer() {
         if (!timerRunning) {
@@ -106,28 +174,6 @@ class Brew : AppCompatActivity() {
         return String.format("%02d:%02d:%02d", hours, minutes, seconds)
     }
 
-
-    private fun setupSpinners() {
-
-        val brewerSpinner: Spinner = binding.brewerSpinner
-        val brewerAdapter = ArrayAdapter.createFromResource(
-            this,
-            R.array.brewers,
-            android.R.layout.simple_spinner_item
-        )
-        brewerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        brewerSpinner.adapter = brewerAdapter
-    }
-
-    // fix this
-    private fun clearInputFields() {
-        binding.beansTextInput.text = null
-        binding.gramsAmountInput.text = null
-        binding.mlAmountInput.text = null
-        binding.waterTempInput.text = null
-        binding.methodTextInput.text = null
-    }
-
     private fun addToDataBase() = CoroutineScope(Dispatchers.IO).launch {
         val dataBaseHelper: DataBaseHelper =
             DataBaseHelper(this@Brew)
@@ -158,6 +204,8 @@ class Brew : AppCompatActivity() {
             withContext(Dispatchers.Main) {
                 if (success) {
                     Toast.makeText(this@Brew, "Brew added successfully!", Toast.LENGTH_LONG).show()
+                    clearInputFields()
+                    hideKeyboard()
                 } else {
                     Toast.makeText(this@Brew, "Failed to add brew!", Toast.LENGTH_LONG).show()
                 }
@@ -175,4 +223,8 @@ class Brew : AppCompatActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        soundPool.release() // Release SoundPool resources
+    }
 }
