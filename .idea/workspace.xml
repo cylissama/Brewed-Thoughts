@@ -77,10 +77,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62344a19-7f4f-428d-ab44-becae79e9fdd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/new_custom_button1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/new_custom_button2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/brew_item_boxed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/ping.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
@@ -89,22 +85,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/adapters/BrewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/adapters/BrewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/Brew.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/Brew.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/Favorites.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/Favorites.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/Home.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/Home.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/Journal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/Journal.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/MethodFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/coffeeappcs372final/presentation/MethodFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/brew_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/brew_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/brew.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/brew.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/brew_item_favorites.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/brew_item_favorites.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_brewers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_brewers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_method.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_method.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/favorites.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/favorites.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/home.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/journal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/journal.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tips.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tips.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tips_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tips_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

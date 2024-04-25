@@ -10,9 +10,12 @@
     <color name="light_brown">#D2B48C</color>
 
     <!--    Coffee Colors   -->
-    <color name="light_coffee">#9A6B47</color>
+    <color name="light_coffee">#704E33</color>
     <color name="lighter_coffee">#B27F57</color>
+    <color name="dark_green">#101606</color>
     <color name="dark_coffee">#704E33</color>
+    <color name="blackened">#0c0208</color>
+    <color name="background_grey">#16191a</color>
     <color name="button_white">#FFECCC</color>
     <color name="red">#E53935</color>
 

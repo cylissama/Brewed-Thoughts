@@ -3,6 +3,7 @@ package com.example.coffeeappcs372final.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.coffeeappcs372final.adapters.BrewAdapter
 import com.example.coffeeappcs372final.database.DataBaseHelper
@@ -31,7 +32,7 @@ class Favorites : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         val brewRecyclerView = binding.favsRecyclerView
-        brewRecyclerView.layoutManager = LinearLayoutManager(this)
+        brewRecyclerView.layoutManager = GridLayoutManager(this, 2)
 
         try {
             val dataBaseHelper =

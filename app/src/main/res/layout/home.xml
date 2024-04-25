@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-    android:background="@color/dark_coffee">
+    android:background="@color/dark_green">
 
     <TextView
         android:id="@+id/helloUserText"
@@ -73,7 +73,7 @@
                 android:layout_width="150sp"
                 android:layout_height="60sp"
                 android:background="@drawable/new_custom_button1"
-                android:textColor="@color/dark_coffee"
+                android:textColor="@color/dark_green"
                 android:layout_marginTop="20sp"
                 android:text="@string/brew_button_text" />
 
@@ -83,7 +83,7 @@
                 android:layout_width="150sp"
                 android:layout_height="60sp"
                 android:background="@drawable/new_custom_button2"
-                android:textColor="@color/dark_coffee"
+                android:textColor="@color/dark_green"
                 android:layout_marginTop="5sp"
                 android:text="@string/journal_button_text" />
 
@@ -93,7 +93,7 @@
                 android:layout_width="150sp"
                 android:layout_height="60sp"
                 android:background="@drawable/new_custom_button1"
-                android:textColor="@color/dark_coffee"
+                android:textColor="@color/dark_green"
                 android:layout_marginTop="10sp"
                 android:text="@string/favorites" />
 
@@ -103,7 +103,7 @@
                 android:layout_width="150sp"
                 android:layout_height="60sp"
                 android:background="@drawable/new_custom_button2"
-                android:textColor="@color/dark_coffee"
+                android:textColor="@color/dark_green"
                 android:layout_marginTop="10sp"
                 android:text="@string/tips_button_text" />
 
