@@ -1,0 +1,25 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tips_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginRight="20sp"
+    android:layout_marginLeft="20sp"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="@color/light_brown"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp"
+    app:cardMaxElevation="12dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <TextView
+        android:id="@+id/tip_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="14sp" />
+
+</androidx.cardview.widget.CardView>

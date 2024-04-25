@@ -16,7 +16,7 @@
         android:fontFamily="cursive"
         android:text="@string/app_title"
         android:textColor="@color/button_white"
-        android:textSize="60sp"
+        android:textSize="55sp"
         android:layout_margin="10sp"
         android:textStyle="bold" />
 

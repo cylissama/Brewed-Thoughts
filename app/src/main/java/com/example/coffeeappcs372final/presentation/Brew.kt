@@ -55,11 +55,25 @@ class Brew : AppCompatActivity() {
 
         val timerButton = binding.timerButton
         timerButton.setOnClickListener {
-            startTime()
+            toggleTimer()
+        }
+
+        val resetButton = binding.resetButton
+        resetButton.setOnClickListener {
+            resetTimer()
         }
     }
 
-    private fun startTime() {
+    private val updateTimer = object : Runnable {
+        override fun run() {
+            timeElapsed = System.currentTimeMillis() - startTime
+            binding.timerText.text = formatTime(timeElapsed)
+            handler.postDelayed(this, 1000)
+        }
+    }
+
+
+    private fun toggleTimer() {
         if (!timerRunning) {
             startTime = System.currentTimeMillis() - timeElapsed
             handler.postDelayed(updateTimer, 0)
@@ -73,11 +87,15 @@ class Brew : AppCompatActivity() {
         }
     }
 
-    private val updateTimer = object : Runnable {
-        override fun run() {
-            timeElapsed = System.currentTimeMillis() - startTime
-            binding.timerText.text = formatTime(timeElapsed)
-            handler.postDelayed(this, 1000)
+    private fun resetTimer() {
+        handler.removeCallbacks(updateTimer)
+        timeElapsed = 0L  // Reset the time elapsed to zero
+        binding.timerText.text = formatTime(timeElapsed)  // Update the timer display to 00:00:00
+        if (timerRunning) {
+            startTime = System.currentTimeMillis()
+            handler.postDelayed(updateTimer, 0)  // Restart the timer if it was running
+        } else {
+            binding.timerButton.text = "Start"  // Set the text back to Start if the timer was stopped
         }
     }
 

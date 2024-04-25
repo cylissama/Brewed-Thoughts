@@ -4,112 +4,128 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/button_white"
-    tools:context=".presentation.BrewersFragment">
+    tools:context=".presentation.MethodFragment"
+    android:background="@color/button_white">
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/light_brown"
-            android:layout_gravity="center"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="10dp"
-            app:cardMaxElevation="12dp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-            android:layout_width="300sp"
-            android:layout_height="200sp">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10sp"
-                    android:textStyle="bold"
-                    android:text="@string/aeropress" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/aeropress_description"
-                    android:layout_margin="5sp"
-                    android:textSize="12sp"/>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/light_brown"
-            android:layout_gravity="center"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="10dp"
-            app:cardMaxElevation="12dp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-            android:layout_width="300sp"
-            android:layout_height="200sp">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10sp"
-                    android:textStyle="bold"
-                    android:text="Frech Press" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5sp"
-                    android:textSize="12sp"
-                    android:text="@string/french_press_description"/>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/light_brown"
-            android:layout_gravity="center"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="10dp"
-            app:cardMaxElevation="12dp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-            android:layout_width="300sp"
-            android:layout_height="200sp">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10sp"
-                    android:textStyle="bold"
-                    android:text="@string/pour_over" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5sp"
-                    android:textSize="11sp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/HarioV60"/>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
+        android:layout_height="match_parent"/>
 
 </FrameLayout>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@color/button_white"-->
+<!--    tools:context=".presentation.BrewersFragment">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            app:cardBackgroundColor="@color/light_brown"-->
+<!--            android:layout_gravity="center"-->
+<!--            app:cardCornerRadius="20dp"-->
+<!--            app:cardElevation="10dp"-->
+<!--            app:cardMaxElevation="12dp"-->
+<!--            app:cardPreventCornerOverlap="true"-->
+<!--            app:cardUseCompatPadding="true"-->
+<!--            android:layout_width="300sp"-->
+<!--            android:layout_height="200sp">-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginTop="10sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:text="@string/aeropress" />-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:text="@string/aeropress_description"-->
+<!--                    android:layout_margin="5sp"-->
+<!--                    android:textSize="12sp"/>-->
+
+<!--            </LinearLayout>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            app:cardBackgroundColor="@color/light_brown"-->
+<!--            android:layout_gravity="center"-->
+<!--            app:cardCornerRadius="20dp"-->
+<!--            app:cardElevation="10dp"-->
+<!--            app:cardMaxElevation="12dp"-->
+<!--            app:cardPreventCornerOverlap="true"-->
+<!--            app:cardUseCompatPadding="true"-->
+<!--            android:layout_width="300sp"-->
+<!--            android:layout_height="200sp">-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginTop="10sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:text="Frech Press" />-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="5sp"-->
+<!--                    android:textSize="12sp"-->
+<!--                    android:text="@string/french_press_description"/>-->
+
+<!--            </LinearLayout>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            app:cardBackgroundColor="@color/light_brown"-->
+<!--            android:layout_gravity="center"-->
+<!--            app:cardCornerRadius="20dp"-->
+<!--            app:cardElevation="10dp"-->
+<!--            app:cardMaxElevation="12dp"-->
+<!--            app:cardPreventCornerOverlap="true"-->
+<!--            app:cardUseCompatPadding="true"-->
+<!--            android:layout_width="300sp"-->
+<!--            android:layout_height="200sp">-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginTop="10sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:text="@string/pour_over" />-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="5sp"-->
+<!--                    android:textSize="11sp"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:text="@string/HarioV60"/>-->
+
+<!--            </LinearLayout>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--    </LinearLayout>-->
+
+<!--</FrameLayout>-->
