@@ -92,7 +92,7 @@ class Home : AppCompatActivity() {
                 handler.postDelayed(this, 3000)  // Scroll every 3 seconds
             }
         }
-        handler.postDelayed(runnable, 3000)  // Initial delay
+        handler.postDelayed(runnable, 3000)
     }
 
     override fun onPause() {

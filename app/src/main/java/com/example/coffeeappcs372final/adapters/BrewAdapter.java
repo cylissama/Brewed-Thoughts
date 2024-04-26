@@ -167,18 +167,15 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
 
 
         note.setOnClickListener(v -> {
-            // Create an AlertDialog for entering the note
             AlertDialog.Builder builder = new AlertDialog.Builder(inflater.getContext());
             builder.setTitle("Edit Note");
 
             // Set up the input
             final EditText input = new EditText(inflater.getContext());
-            // Specify the type of input expected
             input.setInputType(InputType.TYPE_CLASS_TEXT);
-            input.setText(brew.getNote()); // Pre-fill with the current note
+            input.setText(brew.getNote());
             builder.setView(input);
 
-            // Set up the buttons
             builder.setPositiveButton("OK", (alertdialog, which) -> {
                 String newNote = input.getText().toString();
                 updateNoteInDatabase(newNote, brew);
@@ -232,7 +229,7 @@ public class BrewAdapter extends RecyclerView.Adapter<BrewAdapter.ViewHolder> im
             int position = brewsList.indexOf(brew);
             if (position >= 0) {
                 brewsList.set(position, brew);
-                notifyItemChanged(position);  // Notify the adapter of item changed at the position
+                notifyItemChanged(position);
             }
         } else {
             Toast.makeText(inflater.getContext(), "Failed to update note!", Toast.LENGTH_SHORT).show();

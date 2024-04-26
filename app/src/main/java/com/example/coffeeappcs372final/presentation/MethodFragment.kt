@@ -29,8 +29,7 @@ class MethodFragment : Fragment() {
     private fun setupRecyclerView() {
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
 
-        val array = resources.getStringArray(R.array.james_hoffman_v60_steps)
-        val tipsData = array.toMutableList()
+        val tipsData = listOf(resources.getString(R.string.v60_method),resources.getString(R.string.french_press_method),resources.getString(R.string.aeropress_method),resources.getString(R.string.chemex_method),resources.getString(R.string.moka_pot_method),resources.getString(R.string.phin_method))
         adapter = TipsAdapter(requireContext(), tipsData)
         binding.recyclerView.adapter = adapter
     }

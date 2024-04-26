@@ -14,7 +14,7 @@ import java.util.List;
 public class TipsAdapter extends RecyclerView.Adapter<TipsAdapter.ViewHolder> {
 
     private final Context context;
-    private final List<String> tipsList;  // List of tips
+    private final List<String> tipsList;
 
     public TipsAdapter(Context context, List<String> tipsList) {
         this.context = context;

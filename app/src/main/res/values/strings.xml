@@ -83,9 +83,9 @@
     <string name="method">Method</string>
     <string name="grams">Grams</string>
     <string name="note">Note</string>
-    <string name="light_roast">Generally preferred for milder coffee varieties. Light brown in color. No oil on the surface. Best way to brew: Drip or pour over. Slightly higher temp, and finer grind</string>
-    <string name="medium_roast">Medium brown in color stronger flavor, and non-oily surface. Brew with cold brew, pour over, chemex</string>
-    <string name="dark_roast">Shiny black, oily surface. More bitter than the others. Darker color. Little lower water temp. Sometimes grind size should be larger.</string>
+    <string name="light_roast">Light Roast: Light brown in color. No oil on the surface. Best way to brew is either drip or pour over. Use a slightly higher temp, and finer grind size</string>
+    <string name="medium_roast">Medium Roast: Medium brown in color, stronger flavor, and non-oily surface. Good to brew with cold brew, pour over, and chem-ex</string>
+    <string name="dark_roast">Dark Roast: Shiny black with oily surface. More bitter than the varieties. Darker color. Use a lower water temp than normal. Depending on blend, grind size should be larger.</string>
     <string name="HarioV60">Pour over involves pouring hot water over coffee grounds in a filter. The water drains through the coffee and filter into a carafe or mug. Devices like the V60 and Chemex are popular for this brewing method. It\'s favored for its ability to control every variable of the brewing process and highlight nuanced flavors.</string>
     <string name="pour_over">Pour Over</string>
     <string name="start">Start</string>
@@ -96,5 +96,51 @@
     <string name="placeholder">placeholder</string>
     <string name="favorite">Favorite</string>
     <string name="recent_brews">Recent Brews</string>
+
+    <string name="mocha_pot_tip">Moka Pot Tip: Pre-heat the Water: Start with pre-heated water in the bottom chamber of your Moka pot. This reduces the time the coffee sits on the heat, preventing overheating and reducing the likelihood of a bitter flavor. Fill the filter basket with a fine, but not espresso-fine, grind of coffee without packing it down. Assemble the pot and place it on medium heat. When you hear a hissing sound, remove it from the heat to avoid burning the coffee. This results in a smoother and richer espresso-like coffee.</string>
+    <string name="french_press_tip">French Press Tip: Perfect Your Grind and Water Temperature: Use coarse coffee grounds to avoid a muddy cup and to ensure optimal extraction. The ideal water temperature for French press coffee is around 200°F (just off the boil). Too hot water can extract unwanted bitter compounds, while too cool water won\'t extract flavors efficiently. After adding water to the grounds, stir briefly, then let it steep for about 4 minutes before pressing down the plunger.</string>
+    <string name="v60_tip">V60 Tip: Pre-wet the Filter: Before adding your coffee grounds, place the filter in the V60 and rinse it with hot water. This pre-wetting step serves two main purposes: it gets rid of any papery taste from the filter and warms up your V60 and coffee mug or carafe. This helps maintain a consistent brewing temperature, leading to a more even extraction of the coffee flavors. Be sure to discard the rinse water before you begin brewing!</string>
+    <string name="aeropress_method">AeroPress:
+
+Place a filter in the cap and rinse with hot water. Assemble the AeroPress in the inverted position.
+Add 17 grams of medium-fine coffee grounds.
+Pour in 250 ml of water at about 85°C (185°F). Stir gently.
+Let steep for about 1 minute, then stir again.
+Attach the cap with the filter, flip the AeroPress onto a sturdy mug, and press down slowly.</string>
+    <string name="french_press_method">French Press:
+
+Add 30 grams of coarse coffee grounds to the French press.
+Pour in 500 ml of water just off the boil (about 94°C or 200°F).
+Stir the grounds gently to ensure they are fully saturated.
+Let steep for 4 minutes.
+Slowly press down the plunger.</string>
+    <string name="phin_method">Phin (Vietnamese Coffee Maker):
+
+Add 20 grams of medium grind coffee to the phin filter. Tap to level the coffee but do not tamp.
+Place the damper on top of the coffee and press down slightly.
+Pour 20 ml of hot water to bloom the coffee for about 30 seconds.
+Pour 60 ml of hot water over the coffee and cover.
+Let the coffee drip into a glass. It should take about 4 minutes.</string>
+    <string name="v60_method">V60:
+
+Place a filter in the V60 and rinse with hot water. Discard the rinse water.
+Add 20 grams of medium-fine coffee grounds.
+Pour 60 ml of water just off the boil over the grounds to bloom. Wait 30 seconds.
+Continue pouring water in slow circles until you reach 300 ml.
+Allow all the water to drip through the filter before serving.</string>
+    <string name="moka_pot_method">Moka Pot:
+
+Fill the bottom chamber with hot water up to the safety valve.
+Place the coffee basket in the bottom chamber and fill it with 20 grams of fine coffee grounds. Do not tamp.
+Screw on the top chamber.
+Place the Moka pot on medium heat and wait until coffee starts to emerge. Remove from heat once it starts gurgling.</string>
+    <string name="chemex_method">Chemex:
+
+Place a Chemex filter in the brewer and rinse with hot water. Discard the rinse water.
+Add 42 grams of medium-coarse coffee grounds.
+Pour 150 ml of water just off the boil over the grounds to bloom. Wait 45 seconds.
+Continue adding water in stages until reaching a total of 700 ml, pouring in a circular motion and pausing as needed.
+Allow the coffee to finish dripping before serving.</string>
+
 
 </resources>

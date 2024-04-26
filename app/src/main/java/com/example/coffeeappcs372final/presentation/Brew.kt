@@ -42,8 +42,6 @@ class Brew : AppCompatActivity() {
         binding = BrewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val timer: Timer
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setupListeners()
@@ -110,11 +108,9 @@ class Brew : AppCompatActivity() {
                 binding.brewerSpinner.selectedItem == binding.brewerSpinner[0])
     }
 
-    fun hideKeyboard() {
+    private fun hideKeyboard() {
         val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        // Find the currently focused view, so we can grab the correct window token from it.
         val view = currentFocus
-        // If no view currently has focus, create a new one, just so we can grab a window token from it
         if (view != null) {
             inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
         }
@@ -225,6 +221,6 @@ class Brew : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        soundPool.release() // Release SoundPool resources
+        soundPool.release()
     }
 }

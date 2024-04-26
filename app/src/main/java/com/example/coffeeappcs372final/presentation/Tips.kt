@@ -30,11 +30,6 @@ class Tips : AppCompatActivity() {
 
     private fun setupListeners() {
 
-//        binding.tipsBackButton.setOnClickListener {
-//            val intent = Intent(this, Home::class.java)
-//            startActivity(intent)
-//        }
-
         binding.brewersButton.setOnClickListener {
             val brewerFragment = BrewersFragment.newInstance()
             replaceFragment(brewerFragment)

@@ -48,7 +48,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // You can implement schema changes and database updates here if needed.
+        //dont really need to do this
     }
 
     public boolean addBrew(BrewModel brew) {
@@ -106,10 +106,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 BrewModel newBrew = new BrewModel(brewID, beans, brewer, grams, water, temp, method, time, note, favorite);
                 returnList.add(newBrew);
             } while (cursor.moveToNext());
-        }  // failure. do not add anything to the list.
+        }
 
-
-        // close both the cursor and the db when done.
         cursor.close();
         db.close();
 
@@ -119,13 +117,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public boolean updateFavorite(int id, int favoriteStatus) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("favorite", favoriteStatus); // Assuming 'favorite' is the column name
+        contentValues.put("favorite", favoriteStatus);
 
-        // Updating row
         int result = db.update("brew_table", contentValues, "id = ?", new String[]{String.valueOf(id)});
         db.close();
 
-        return result != -1; // returns true if the update was successful
+        return result != -1;
     }
 
     public boolean updateNote(int id, String note) {

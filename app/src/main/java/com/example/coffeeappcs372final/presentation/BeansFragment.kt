@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.coffeeappcs372final.R
 import com.example.coffeeappcs372final.adapters.TipsAdapter
 import com.example.coffeeappcs372final.databinding.FragmentBeansBinding
 
@@ -29,7 +30,7 @@ class BeansFragment : Fragment() {
     private fun setupRecyclerView() {
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
 
-        val tipsData = listOf("Light Roast", "Medium Roast", "Dark Roast")
+        val tipsData = listOf(resources.getString(R.string.light_roast), resources.getString(R.string.medium_roast), resources.getString(R.string.dark_roast))
         adapter = TipsAdapter(requireContext(), tipsData)
         binding.recyclerView.adapter = adapter
     }
